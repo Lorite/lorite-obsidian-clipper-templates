@@ -13,54 +13,57 @@ These templates are designed for real-world knowledge workflows: articles, GitHu
 
 ### Articles and Websites
 
-- [Article (ALREADY READ)](templates/article-(already-read)-clipper.json)
-- [Article (TODO READ)](templates/article-(todo-read)-clipper.json)
-- [Article fullHtml (ALREADY READ)](templates/article-fullhtml-(already-read)-clipper.json)
-- [Product](templates/product-clipper.json)
-- [Website contentHtml](templates/website-contenthtml-clipper.json)
-- [Website Default](templates/website-default-clipper.json)
-- [Website fullHtml](templates/website-fullhtml-clipper.json)
-- [Wikipedia](templates/wikipedia-clipper.json)
+- [Article (ALREADY READ)](templates/01-article-(already-read)-clipper.json)
+- [Article fullHtml (ALREADY READ)](templates/02-article-fullhtml-(already-read)-clipper.json)
+- [Article (TODO READ)](templates/03-article-(todo-read)-clipper.json)
+- [Website Default](templates/04-website-default-clipper.json)
+- [Website contentHtml](templates/05-website-contenthtml-clipper.json)
+- [Website fullHtml](templates/06-website-fullhtml-clipper.json)
+- [Wikipedia](templates/28-wikipedia-clipper.json)
 
-### GitHub
+### Tasks
 
-- [GitHub Issue](templates/github-issue-clipper.json)
-- [GitHub Pull Request](templates/github-pull-request-clipper.json)
-- [Github Releases](templates/github-releases-clipper.json)
-- [GitHub Repository](templates/github-repository-clipper.json)
-- [TASK - GitHub Issue](templates/task---github-issue-clipper.json)
-
-### AI and LLM Platforms
-
-- [ChatGPT](templates/chatgpt-clipper.json)
-- [Google Gemini](templates/google-gemini-clipper.json)
-- [Google NotebookLM](templates/google-notebooklm-clipper.json)
-- [Grok](templates/grok-clipper.json)
-
-### Email and Communication
-
-- [Google Mail](templates/google-mail-clipper.json)
-- [Outlook Mail](templates/outlook-mail-clipper.json)
-- [LinkedIn](templates/linkedin-clipper.json)
+- [TASK](templates/07-task-clipper.json)
+- [TASK - GitHub Issue](templates/08-task---github-issue-clipper.json)
 
 ### Social and Community
 
-- [Instagram](templates/instagram-clipper.json)
-- [Reddit Post](templates/reddit-post-clipper.json)
-- [The Hacker News](templates/the-hacker-news-clipper.json)
+- [Reddit Post](templates/09-reddit-post-clipper.json)
+- [The Hacker News](templates/26-the-hacker-news-clipper.json)
+- [Instagram](templates/29-instagram-clipper.json)
+- [LinkedIn](templates/30-linkedin-clipper.json)
+
+### Shopping and Places
+
+- [Product](templates/10-product-clipper.json)
+- [Recipes](templates/25-recipes-clipper.json)
+- [Google Maps](templates/27-google-maps-clipper.json)
 
 ### Video and Learning
 
-- [Jupyter Notebook](templates/jupyter-notebook-clipper.json)
-- [YouTube](templates/youtube-clipper.json)
-- [YouTube timestamp](templates/youtube-timestamp-clipper.json)
-- [YouTube with transcript](templates/youtube-with-transcript-clipper.json)
+- [YouTube with transcript](templates/11-youtube-with-transcript-clipper.json)
+- [YouTube](templates/12-youtube-clipper.json)
+- [YouTube timestamp](templates/13-youtube-timestamp-clipper.json)
+- [Jupyter Notebook](templates/24-jupyter-notebook-clipper.json)
 
-### Utility and Tasks
+### AI and LLM Platforms
 
-- [Google Maps](templates/google-maps-clipper.json)
-- [Recipes](templates/recipes-clipper.json)
-- [TASK](templates/task-clipper.json)
+- [Google NotebookLM](templates/14-google-notebooklm-clipper.json)
+- [Google Gemini](templates/15-google-gemini-clipper.json)
+- [Grok](templates/16-grok-clipper.json)
+- [ChatGPT](templates/17-chatgpt-clipper.json)
+
+### Email and Communication
+
+- [Google Mail](templates/18-google-mail-clipper.json)
+- [Outlook Mail](templates/19-outlook-mail-clipper.json)
+
+### GitHub
+
+- [GitHub Issue](templates/20-github-issue-clipper.json)
+- [GitHub Pull Request](templates/21-github-pull-request-clipper.json)
+- [Github Releases](templates/22-github-releases-clipper.json)
+- [GitHub Repository](templates/23-github-repository-clipper.json)
 
 ## Requirements
 
