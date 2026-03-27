@@ -1,0 +1,58 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "GitHub Repository",
+	"behavior": "create",
+	"noteContentFormat": "\n# Obsidian Notes\n\n-\n\n# README\n\n{{content}}\n\n",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{selector:#repo-title-component a}}",
+			"type": "text"
+		},
+		{
+			"name": "owner",
+			"value": "{{meta:name:octolytics-dimension-user_login}}",
+			"type": "text"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "website",
+			"value": "{{selector:.Layout-sidebar a?href|first}}",
+			"type": "text"
+		},
+		{
+			"name": "description",
+			"value": "{{selector:.Layout-sidebar p|first}}",
+			"type": "text"
+		},
+		{
+			"name": "stars",
+			"value": "{{selector:#repo-stars-counter-star}}",
+			"type": "number"
+		},
+		{
+			"name": "tags",
+			"value": "media, github, github_repository, {{selector:.topic-tag|join:\\\", \\\"}}",
+			"type": "multitext"
+		},
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "type",
+			"value": "github_repository",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"aaaaaa"
+	],
+	"noteNameFormat": "{{meta:name:octolytics-dimension-user_login}} {{selector:#repo-title-component a}}: {{selector:.Layout-sidebar p|first}}",
+	"path": "media/github/github_repository"
+}

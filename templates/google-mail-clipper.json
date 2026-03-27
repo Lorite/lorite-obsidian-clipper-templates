@@ -1,0 +1,48 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Google Mail",
+	"behavior": "create",
+	"noteContentFormat": "\n# Obsidian Notes\n\n- \n\n# {{selector:div.ha > h2}}\n\n{{selectorHtml:div.a3s|replace:\"tbody\":\"\"|replace:\"table\":\"\"|replace:\"td\":\"\"|replace:\"tr\":\"\"|markdown|strip_tags:(\"border\")|replace:\"<>\":\"\"|replace:\"     \":\"\"|replace:\"    \":\"\"}}\n",
+	"properties": [
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "reviewed",
+			"value": "",
+			"type": "datetime"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "received",
+			"value": "{{selector:span[class=\\\"g3\\\"]?title|last|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "subject",
+			"value": "{{selector:div.ha > h2}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "media, emails",
+			"type": "multitext"
+		},
+		{
+			"name": "type",
+			"value": "email",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"https://mail.google.com/mail"
+	],
+	"noteNameFormat": "{{selector:span[class=\"g3\"]?title|date:\"YYYY-MM-DD\"}} EMAIL {{selector:div.ha > h2|safe_name}}",
+	"path": "media/emails"
+}

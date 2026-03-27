@@ -1,0 +1,56 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "TASK",
+	"behavior": "create",
+	"noteContentFormat": "\n# 🎯 Task Description\n\nTODO\n\n# 📓 Journal / Work Log\n\n## TODO DATE NEWER\n\n- TODO\n\n## TODO DATE\n\n- TODO\n\n# ✅ Outcome & Learnings\n\n## Outcome\n\n- TODO\n\n## Learnings\n\n- TODO\n\n## Next Steps\n\n- TODO\n",
+	"properties": [
+		{
+			"name": "status",
+			"value": "new",
+			"type": "text"
+		},
+		{
+			"name": "priority",
+			"value": "none",
+			"type": "text"
+		},
+		{
+			"name": "projects",
+			"value": "",
+			"type": "multitext"
+		},
+		{
+			"name": "date_created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "text"
+		},
+		{
+			"name": "date_updated",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "task, work, phd_novo_itu",
+			"type": "multitext"
+		},
+		{
+			"name": "type",
+			"value": "task",
+			"type": "text"
+		},
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "updated",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "text"
+		}
+	],
+	"triggers": [],
+	"noteNameFormat": "DO???? {{title}}",
+	"path": "tasks"
+}

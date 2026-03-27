@@ -1,0 +1,74 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Jupyter Notebook",
+	"behavior": "create",
+	"noteContentFormat": "- [ ] TODO: add tags and remove this line!!\n\n# Obsidian Notes\n\n- \n\n# Highlights\n\n- {{highlights|map: item => item.text|join:\\\"\\\\n- \\\"}}\n\n---\n\n# LLM Summary\n\n{{\"You're an expert analyst, great at breaking down complex topics into simple, understandable summaries. For the provided text from a website or article, create a concise 'cheat sheet' for me by answering these questions: * **What's the Big Idea?**: In just one or two sentences, what is the absolute main point the author is trying to get across? * **Key Takeaways**: What are the 3-5 most important points or arguments I should remember from this? * **Proof Points**: What kind of evidence, examples, or data does the author use to support their main ideas? * **Jargon Buster**: Are there any important terms, acronyms, or concepts I need to understand? If so, explain them simply. * **So What? (The Real-World Impact)**: How does this information apply in the real world? What are the practical implications or takeaways for the average person or a professional in this field? * **What's Missing or Debatable?**: Does the article mention any limitations, unanswered questions, or different viewpoints? * (only if relevant) **Connect the Dots**: How does this information relate to my specific interest in robotics, software, teaching, learning, or technology (choose 1)?\"}}\n\n---\n\n# Original [[Python Jupyter Notebook]]\n\n{{content}}\n",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{selector:head > title|trim}}",
+			"type": "text"
+		},
+		{
+			"name": "short_description",
+			"value": "{{\\\"Make 1 line description of the jupyter notebook. You are a professional in the field, and can explain things in detail\\\"}}",
+			"type": "text"
+		},
+		{
+			"name": "description",
+			"value": "{{\\\"Make 4-5 lines description of the jupyter notebook. You are a professional in the field, and can explain things in detail\\\"}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author|split:\\\",\\\"|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "tags",
+			"value": "media, code, python, work, phd_novo_itu",
+			"type": "multitext"
+		},
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "word_count",
+			"value": "{{words}}",
+			"type": "number"
+		},
+		{
+			"name": "type",
+			"value": "code",
+			"type": "text"
+		},
+		{
+			"name": "read_length_minutes",
+			"value": "{{words|calc:\\\"/238\\\"}}",
+			"type": "number"
+		},
+		{
+			"name": "personal_rating",
+			"value": "",
+			"type": "number"
+		},
+		{
+			"name": "language",
+			"value": "[[Python Jupyter Notebook]]",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"https://colab.research.google.com/"
+	],
+	"noteNameFormat": "{{selector:head > title|trim|safe_name}}",
+	"path": "media/code",
+	"context": "{{content}}"
+}

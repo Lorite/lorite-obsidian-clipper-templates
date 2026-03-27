@@ -1,0 +1,128 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Recipes",
+	"behavior": "create",
+	"noteContentFormat": "\n# Cooking Log\n\n## Date\n\n# Description\n\n{{description}}\n\n# Ingredients\n\n{{schema:recipeIngredient|list:task}}\n\n# Instructions\n\n{{schema:recipeInstructions[*].text|list:numbered-task}}\n\n# Nutrition\n\n{{schema:@Recipe:nutrition|uncamel|capitalize|table|replace:(\"@type\":\"Nutrient\",\"Nutrition information\":\"Quantity\")}}\n\n# Obsidian Notes\n\n{{selectorHtml:div[class=\"wprm-recipe-notes\"] | markdown}}\n\n# Comments\n\n{{schema:review|map:item => ({author: item.author.name, reviewRating: item.reviewRating.ratingValue, reviewBody: item.reviewBody})|template:\"- ${author}: ${reviewRating}/5. ${reviewBody}\"}}",
+	"properties": [
+		{
+			"name": "author",
+			"value": "{{schema:author[*].name|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "image",
+			"value": "{{image}}",
+			"type": "text"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "online_rating",
+			"value": "{{schema:aggregateRating.ratingValue|calc:\\\"*2\\\"}}",
+			"type": "number"
+		},
+		{
+			"name": "personal_rating",
+			"value": "",
+			"type": "number"
+		},
+		{
+			"name": "cooking_method",
+			"value": "{{schema:cookingMethod}}",
+			"type": "text"
+		},
+		{
+			"name": "recipe_category",
+			"value": "{{schema:recipeCategory}}",
+			"type": "text"
+		},
+		{
+			"name": "recipe_cuisine",
+			"value": "{{schema:recipeCuisine}}",
+			"type": "text"
+		},
+		{
+			"name": "total_time",
+			"value": "{{schema:totalTime}}",
+			"type": "number"
+		},
+		{
+			"name": "prep_time",
+			"value": "{{schema:prepTime}}",
+			"type": "number"
+		},
+		{
+			"name": "cook_time",
+			"value": "{{schema:cookTime}}",
+			"type": "number"
+		},
+		{
+			"name": "perform_time",
+			"value": "{{schema:performTime}}",
+			"type": "number"
+		},
+		{
+			"name": "suitable_for_diet",
+			"value": "{{schema:suitableForDiet}}",
+			"type": "text"
+		},
+		{
+			"name": "recipe_yield",
+			"value": "{{schema:recipeYield}}",
+			"type": "text"
+		},
+		{
+			"name": "estimated_cost",
+			"value": "{{schema:estimatedCost}}",
+			"type": "text"
+		},
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "publisher",
+			"value": "{{schema:publisher.name|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "tags",
+			"value": "media, food, cooking_recipes, {{schema:keywords|snake|join:\\\", \\\"}}",
+			"type": "multitext"
+		},
+		{
+			"name": "type",
+			"value": "recipe",
+			"type": "text"
+		},
+		{
+			"name": "publish",
+			"value": "true",
+			"type": "checkbox"
+		},
+		{
+			"name": "publish_mode",
+			"value": "external",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"schema:@Recipe"
+	],
+	"noteNameFormat": "{{title}}",
+	"path": "media/food/cooking_recipes"
+}

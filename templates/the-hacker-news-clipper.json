@@ -1,0 +1,68 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "The Hacker News",
+	"behavior": "create",
+	"noteContentFormat": "\n# Obsidian Notes\n\n- \n\n# {{title}}\n\n{{selectorHtml:#articlebody|remove_html:(\".dog_two,.note-b\")|markdown}}",
+	"properties": [
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "reviewed",
+			"value": "",
+			"type": "datetime"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{selector:.post-body > div[itemprop=\\\"author\\\"] > meta[itemprop=\\\"name\\\"]?content|split:\\\",\\\"|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "published",
+			"value": "{{selectorHtml:.post-body > meta[itemprop=\\\"datePublished\\\"]?content|date:\\\"YYYY-MM-DDTHH:mm:ssZ\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "media, websites",
+			"type": "multitext"
+		},
+		{
+			"name": "type",
+			"value": "website",
+			"type": "text"
+		},
+		{
+			"name": "publish",
+			"value": "true",
+			"type": "checkbox"
+		},
+		{
+			"name": "publish_mode",
+			"value": "external",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"https://thehackernews.com/"
+	],
+	"noteNameFormat": "{{selectorHtml:.post-body > meta[itemprop=\"datePublished\"]?content|date:\"YYYY-MM-DD\"}} WEB {{title|safe_name}}",
+	"path": "media/websites"
+}

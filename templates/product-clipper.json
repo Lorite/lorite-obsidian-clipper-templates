@@ -1,0 +1,48 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Product",
+	"behavior": "create",
+	"noteContentFormat": "{{description}}",
+	"properties": [
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "source",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "title",
+			"value": "{{schema:@Product:name}}",
+			"type": "text"
+		},
+		{
+			"name": "price",
+			"value": "{{meta:property:product:price:amount}}",
+			"type": "number"
+		},
+		{
+			"name": "image",
+			"value": "{{image}}",
+			"type": "text"
+		},
+		{
+			"name": "type",
+			"value": "thing",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"schema:@Product"
+	],
+	"noteNameFormat": "{{title}}",
+	"path": "personal/things"
+}

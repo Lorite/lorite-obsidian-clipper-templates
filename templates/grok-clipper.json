@@ -1,0 +1,74 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Grok",
+	"behavior": "create",
+	"noteContentFormat": "- [ ] TODO: modify the body to split the questions and answers, add tags and remove this line!!\n\n# Obsidian Notes\n\n- \n\n# AI Chat\n\n{{content}}\n",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{noteName}}",
+			"type": "text"
+		},
+		{
+			"name": "description",
+			"value": "{{\\\"Make 4-5 lines description of the article. You are a professional in the field, and can explain things in detail\\\"}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "[[Grok]]",
+			"type": "multitext"
+		},
+		{
+			"name": "tags",
+			"value": "ai_chats",
+			"type": "multitext"
+		},
+		{
+			"name": "date_saved",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "dataSource",
+			"value": "Obsidian Web Clipper",
+			"type": "text"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "word_count",
+			"value": "{{words}}",
+			"type": "number"
+		},
+		{
+			"name": "read_length_minutes",
+			"value": "{{words|calc:\\\"/238\\\"}}",
+			"type": "number"
+		},
+		{
+			"name": "type",
+			"value": "ai_chat",
+			"type": "text"
+		},
+		{
+			"name": "ai_model",
+			"value": "Grok",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"https://grok.com/"
+	],
+	"noteNameFormat": "AI Chat - Grok - {{noteName}}",
+	"path": "ai_chats/",
+	"context": "{{content}}"
+}

@@ -1,0 +1,104 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "LinkedIn",
+	"behavior": "create",
+	"noteContentFormat": "\n- [ ] TODO Copy title from frontmatter to note file name\n\n# Obsidian Notes\n\n- \n\n# Original article\n\n{{content}}",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{\\\"Generate a title\\\"}}",
+			"type": "text"
+		},
+		{
+			"name": "short_description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "description",
+			"value": "{{\\\"Make 4-5 lines description of the article. You are a professional in the field, and can explain things in detail\\\"}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{selector:.update-components-actor__title > .hoverable-link-text > span[dir=\\\\\"ltr\\\\\"] > span[aria-hidden=\\\\\"true\\\\\"]}}",
+			"type": "multitext"
+		},
+		{
+			"name": "image",
+			"value": "{{image}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "media, websites",
+			"type": "multitext"
+		},
+		{
+			"name": "state",
+			"value": "ARCHIVED",
+			"type": "text"
+		},
+		{
+			"name": "date_published",
+			"value": "{{published|date:\\\"YYYY-MM-DD\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "date_saved",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "dataSource",
+			"value": "Obsidian Web Clipper",
+			"type": "text"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "word_count",
+			"value": "{{words}}",
+			"type": "number"
+		},
+		{
+			"name": "type",
+			"value": "website",
+			"type": "text"
+		},
+		{
+			"name": "read_length_minutes",
+			"value": "{{words|calc:\\\"/238\\\"}}",
+			"type": "number"
+		},
+		{
+			"name": "publish",
+			"value": "true",
+			"type": "checkbox"
+		},
+		{
+			"name": "publish_mode",
+			"value": "external",
+			"type": "text"
+		},
+		{
+			"name": "personal_rating",
+			"value": "",
+			"type": "number"
+		}
+	],
+	"triggers": [
+		"https://www.linkedin.com/"
+	],
+	"noteNameFormat": "LinkedIn post - TODO",
+	"path": "media/websites",
+	"context": "{{content}}"
+}

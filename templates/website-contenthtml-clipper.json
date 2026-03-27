@@ -1,0 +1,71 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Website contentHtml",
+	"behavior": "create",
+	"noteContentFormat": "- [ ] TODO: add tags and remove this line!!\n\n# Obsidian Notes\n\n- \n\n# Highlights\n\n- {{highlights|map: item => item.text|join:\\\"\\\\n- \\\"}}\n\n---\n\n# LLM Summary\n\n{{\"You're an expert analyst, great at breaking down complex topics into simple, understandable summaries. For the provided text from a website or article, create a concise 'cheat sheet' for me by answering these questions: * **What's the Big Idea?**: In just one or two sentences, what is the absolute main point the author is trying to get across? * **Key Takeaways**: What are the 3-5 most important points or arguments I should remember from this? * **Proof Points**: What kind of evidence, examples, or data does the author use to support their main ideas? * **Jargon Buster**: Are there any important terms, acronyms, or concepts I need to understand? If so, explain them simply. * **So What? (The Real-World Impact)**: How does this information apply in the real world? What are the practical implications or takeaways for the average person or a professional in this field? * **What's Missing or Debatable?**: Does the article mention any limitations, unanswered questions, or different viewpoints? * (only if relevant) **Connect the Dots**: How does this information relate to my specific interest in robotics, software, teaching, learning, or technology (choose 1)?\"}}\n\n---\n\n# Original website\n\n{{contentHtml|markdown}}\n",
+	"properties": [
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author|split:\\\",\\\"|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "image",
+			"value": "{{image}}",
+			"type": "text"
+		},
+		{
+			"name": "published",
+			"value": "{{published|date:\\\"YYYY-MM-DD\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "type",
+			"value": "website",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "media, websites",
+			"type": "multitext"
+		},
+		{
+			"name": "publish",
+			"value": "true",
+			"type": "checkbox"
+		},
+		{
+			"name": "publish_mode",
+			"value": "external",
+			"type": "text"
+		},
+		{
+			"name": "personal_rating",
+			"value": "",
+			"type": "number"
+		}
+	],
+	"triggers": [],
+	"noteNameFormat": "{{title}} - {{author|split:\\\", \\\"|join}}",
+	"path": "media/websites"
+}

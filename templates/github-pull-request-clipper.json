@@ -1,0 +1,73 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "GitHub Pull Request",
+	"behavior": "create",
+	"noteContentFormat": "TODO: add a new task if you start reviewing or created this GitHub pull request and remove this line.\n\n# 🎯 PR Description\n\n{{content}}\n\n# 📓 Task Notes\n\n![[Solve GitHub Issue - {{title|split:\"·\"|last|replace:\" / GitHub\":\"\"|replace:\" · GitHub\":\"\"|trim|split:\"/\"|map:item => item.trim|join:\" - \"|safe_name}} - {{title|split:\"·\"|first|trim|replace:\":\":\" - \"|replace:\" - After\":\" - After\"|safe_name}}#📓 Journal / Work Log]]\n\n# ✅ Outcome & Learnings\n\n![[Solve GitHub Issue - {{title|split:\"·\"|last|replace:\" / GitHub\":\"\"|replace:\" · GitHub\":\"\"|trim|split:\"/\"|map:item => item.trim|join:\" - \"|safe_name}} - {{title|split:\"·\"|first|trim|replace:\":\":\" - \"|replace:\" - After\":\" - After\"|safe_name}}#✅ Outcome & Learnings]]\n\n",
+	"properties": [
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "title",
+			"value": "{{title|split:\\\"·\\\"|first|trim|replace:\\\":\\\":\\\" - \\\"|replace:\\\" - After\\\":\\\" - After\\\"|safe_name}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author|split:\\\",\\\"|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "opened_by",
+			"value": "{{selector:[data-testid=\\\"issue-body-header-author\\\"]}}",
+			"type": "text"
+		},
+		{
+			"name": "published",
+			"value": "{{selector:relative-time?datetime|first|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "media, github, github_pull_requests, github_repo_{{title|split:\\\"·\\\"|last|trim|replace:\\\" · GitHub\\\":\\\"\\\"|replace:\\\" / GitHub\\\":\\\"\\\"|split:\\\"/\\\"|last|trim|safe_name}}",
+			"type": "multitext"
+		},
+		{
+			"name": "github_repository",
+			"value": "{{title|split:\\\"·\\\"|last|replace:\\\" / GitHub\\\":\\\"\\\"|replace:\\\" · GitHub\\\":\\\"\\\"|trim|split:\\\"/\\\"|last|trim|safe_name}}",
+			"type": "text"
+		},
+		{
+			"name": "github_user",
+			"value": "{{title|split:\\\"·\\\"|last|replace:\\\" / GitHub\\\":\\\"\\\"|replace:\\\" · GitHub\\\":\\\"\\\"|trim|split:\\\"/\\\"|first|trim|safe_name}}",
+			"type": "text"
+		},
+		{
+			"name": "aliases",
+			"value": "{{title|split:\\\"·\\\"|first|trim|replace:\\\":\\\":\\\" - \\\"|replace:\\\" - After\\\":\\\" - After\\\"|safe_name}}",
+			"type": "multitext"
+		},
+		{
+			"name": "type",
+			"value": "github_pull_request",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"/^https?:\\/\\/(www\\.)?github\\.com\\/[^\\/]+\\/[^\\/]+\\/pull\\/\\d+/"
+	],
+	"noteNameFormat": "GitHub Pull Request - {{title|split:\"·\"|last|replace:\" / GitHub\":\"\"|replace:\" · GitHub\":\"\"|trim|split:\"/\"|map:item => item.trim|join:\" - \"|safe_name}} - {{title|split:\"·\"|first|trim|replace:\":\":\" - \"|safe_name}}",
+	"path": "media/github/github_pull_requests"
+}

@@ -1,0 +1,68 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Reddit Post",
+	"behavior": "create",
+	"noteContentFormat": "- [ ] TODO: add tags and remove this line!!\n\n# Obsidian Notes\n\n- \n\n# Highlights\n\n- {{highlights|map: item => item.text|join:\\\"\\\\n- \\\"}}\n\n---\n\n# Original Post\n\n> Posted in **{{selector:shreddit-post?subreddit-prefixed-name}}** by *{{selector:shreddit-post?author}}* at {{selector:shreddit-post?created-timestamp|date:\"YYYY-MM-DDTHH:mm:ssZ\"}} (⬆️ {{selector:shreddit-post?score}})\n\n\n## {{selector:shreddit-post?post-title|trim}}\n\n{{content}}\n",
+	"properties": [
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "reviewed",
+			"value": "",
+			"type": "datetime"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "media, websites, reddit",
+			"type": "multitext"
+		},
+		{
+			"name": "title",
+			"value": "{{selector:shreddit-post?post-title|trim}}",
+			"type": "text"
+		},
+		{
+			"name": "published",
+			"value": "{{selector:shreddit-post?created-timestamp|date:\\\"YYYY-MM-DDTHH:mm:ssZ\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "subreddit",
+			"value": "{{selector:shreddit-post?subreddit-prefixed-name}}",
+			"type": "text"
+		},
+		{
+			"name": "type",
+			"value": "website",
+			"type": "text"
+		},
+		{
+			"name": "publish",
+			"value": "true",
+			"type": "checkbox"
+		},
+		{
+			"name": "publish_mode",
+			"value": "external",
+			"type": "text"
+		},
+		{
+			"name": "personal_rating",
+			"value": "",
+			"type": "number"
+		}
+	],
+	"triggers": [
+		"https://www.reddit.com"
+	],
+	"noteNameFormat": "{{selector:shreddit-post?created-timestamp|date:\"YYYY-MM-DD\"}} REDDIT {{selector:shreddit-post?post-title|trim|safe_name}}",
+	"path": "media/websites"
+}

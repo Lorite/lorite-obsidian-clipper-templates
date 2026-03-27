@@ -1,0 +1,74 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Google NotebookLM",
+	"behavior": "create",
+	"noteContentFormat": "- [ ] TODO: modify the body to split the questions and answers, add tags and remove this line!! ALSO COPY SOME PODCAST TRANSCRIPT (download podcast and use Vibe on Linux for example), FLASHCARDS, SLIDES, ETC TO THIS NOTE OR A NEW ONE\n\n# Obsidian Notes\n\n- \n\n# AI Chat\n\n{{content}}\n",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{selector:editable-project-title}}",
+			"type": "text"
+		},
+		{
+			"name": "description",
+			"value": "{{\\\"Make 4-5 lines description of the article. You are a professional in the field, and can explain things in detail\\\"}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "[[Google NotebookLM]]",
+			"type": "multitext"
+		},
+		{
+			"name": "tags",
+			"value": "ai_chats",
+			"type": "multitext"
+		},
+		{
+			"name": "date_saved",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "dataSource",
+			"value": "Obsidian Web Clipper",
+			"type": "text"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "word_count",
+			"value": "{{words}}",
+			"type": "number"
+		},
+		{
+			"name": "read_length_minutes",
+			"value": "{{words|calc:\\\"/238\\\"}}",
+			"type": "number"
+		},
+		{
+			"name": "type",
+			"value": "ai_chat",
+			"type": "text"
+		},
+		{
+			"name": "ai_model",
+			"value": "Google NotebookLM {{selector:.logo-pill-label-container span}}",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"https://notebooklm.google.com/"
+	],
+	"noteNameFormat": "AI Chat - Google NotebookLM - {{selector:editable-project-title}}",
+	"path": "ai_chats/",
+	"context": "{{content}}"
+}

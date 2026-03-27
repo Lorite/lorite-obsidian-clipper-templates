@@ -1,0 +1,58 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "TASK - GitHub Issue",
+	"behavior": "create",
+	"noteContentFormat": "\n# 🎯 Task Description\n\n![[GitHub Issue - {{title|split:\"·\"|last|replace:\" / GitHub\":\"\"|replace:\" · GitHub\":\"\"|trim|split:\"/\"|map:item => item.trim|join:\" - \"|safe_name}} - {{title|split:\"·\"|first|trim|replace:\":\":\" - \"|safe_name}}#🎯 Task Description]]\n\n# 📓 Journal / Work Log\n\n## TODO DATE NEWER\n\n- TODO\n\n## TODO DATE\n\n- TODO\n\n# ✅ Outcome & Learnings\n\n## Outcome\n\n- TODO\n\n## Learnings\n\n- TODO\n\n## Next Steps\n\n- TODO\n",
+	"properties": [
+		{
+			"name": "status",
+			"value": "new",
+			"type": "text"
+		},
+		{
+			"name": "priority",
+			"value": "none",
+			"type": "text"
+		},
+		{
+			"name": "projects",
+			"value": "[[Conference Paper - Quadruped Drone Collaboration Paper 1]], [[PhD project GitHub repository]]",
+			"type": "multitext"
+		},
+		{
+			"name": "date_created",
+			"value": "{{selector:relative-time?datetime|first|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "text"
+		},
+		{
+			"name": "date_updated",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "task, work, phd_novo_itu, github, github_issues, github_repo_{{title|split:\\\"·\\\"|last|trim|replace:\\\" · GitHub\\\":\\\"\\\"|replace:\\\" / GitHub\\\":\\\"\\\"|split:\\\"/\\\"|last|trim|safe_name}}, conference_paper_quadruped_drone_collaboration_1",
+			"type": "multitext"
+		},
+		{
+			"name": "type",
+			"value": "task",
+			"type": "text"
+		},
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "updated",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"/^https?:\\/\\/(www\\.)?github\\.com\\/[^\\/]+\\/[^\\/]+\\/(issues|pull)\\/\\d+/"
+	],
+	"noteNameFormat": "Solve GitHub Issue - {{title|split:\"·\"|last|replace:\" / GitHub\":\"\"|replace:\" · GitHub\":\"\"|trim|split:\"/\"|map:item => item.trim|join:\" - \"|safe_name}} - {{title|split:\"·\"|first|trim|replace:\":\":\" - \"|replace:\" - After\":\" - After\"|safe_name}}",
+	"path": "tasks"
+}

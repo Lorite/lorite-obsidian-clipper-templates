@@ -1,0 +1,83 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Wikipedia",
+	"behavior": "create",
+	"noteContentFormat": "- [ ] TODO: create a concept under a concepts/ folder where needed and link it under [[#Obsidian Notes]]\n\n# Obsidian Notes\n\n- TODO\n\n# Original Article\n\n{{content}}\n",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "short_description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "description",
+			"value": "{{\\\"Make 4-5 lines description of the article. You are a professional in the field, and can explain things in detail\\\"}}",
+			"type": "text"
+		},
+		{
+			"name": "image",
+			"value": "{{image}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "[[Wikipedia]]",
+			"type": "multitext"
+		},
+		{
+			"name": "tags",
+			"value": "media, wiki",
+			"type": "multitext"
+		},
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "word_count",
+			"value": "{{words}}",
+			"type": "number"
+		},
+		{
+			"name": "type",
+			"value": "wiki",
+			"type": "text"
+		},
+		{
+			"name": "read_length_minutes",
+			"value": "{{words|calc:\\\"/238\\\"}}",
+			"type": "number"
+		},
+		{
+			"name": "publish",
+			"value": "true",
+			"type": "checkbox"
+		},
+		{
+			"name": "publish_mode",
+			"value": "external",
+			"type": "text"
+		},
+		{
+			"name": "personal_rating",
+			"value": "",
+			"type": "number"
+		}
+	],
+	"triggers": [
+		"/^https:\\/\\/[a-z]{2,3}\\.wikipedia\\.org\\/wiki\\/.*$/"
+	],
+	"noteNameFormat": "{{title}}",
+	"path": "media/wikis"
+}

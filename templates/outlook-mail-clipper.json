@@ -1,0 +1,43 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Outlook Mail",
+	"behavior": "create",
+	"noteContentFormat": "\n# Obsidian Notes\n\n- \n\n# {{content|join:\"\\n\\n\\n# \"|replace:\"ReplyReplyReply allReply all\":\"\"|replace:\"ReplyReplyReply allReply allForwardForwardAppsApps\":\" \"|replace:\"ReplyReplyReply allReply allForwardForwardAppsApps\":\" \"|replace:\"More actions\":\" \"|replace:\"More actions\":\" \"|replace:\"ReplyForward\":\" \"|replace:\"ReplyForward\":\" \"|replace:\"/(\\d{4}-\\d{2}-\\d{2})/g\":\"[[$1]]\"}}\n",
+	"properties": [
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "received",
+			"value": "{{selector:div[data-testid=\\\"SentReceivedSavedTime\\\"]|first|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "subject",
+			"value": "{{selector:span[class=\\\"JdFsz\\\"]?title|safe_name}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "media, emails, work, phd_novo_itu",
+			"type": "multitext"
+		},
+		{
+			"name": "type",
+			"value": "email",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"https://outlook.office365.com/mail"
+	],
+	"noteNameFormat": "{{selector:div[data-testid=\"SentReceivedSavedTime\"]|first|date:\"YYYY-MM-DD\"}} EMAIL {{selector:span[class=\"JdFsz\"]?title|safe_name}}",
+	"path": "media/emails"
+}
