@@ -6,7 +6,7 @@
 	"properties": [
 		{
 			"name": "created",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{
@@ -16,12 +16,12 @@
 		},
 		{
 			"name": "received",
-			"value": "{{selector:div[data-testid=\\\"SentReceivedSavedTime\\\"]|first|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{selector:div[data-testid=\"SentReceivedSavedTime\"]|first|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{
 			"name": "subject",
-			"value": "{{selector:span[class=\\\"JdFsz\\\"]?title|safe_name}}",
+			"value": "{{selector:span[class=\"JdFsz\"]?title|safe_name}}",
 			"type": "text"
 		},
 		{

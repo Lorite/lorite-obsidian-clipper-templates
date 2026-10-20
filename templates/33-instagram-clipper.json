@@ -1,12 +1,12 @@
 {
 	"schemaVersion": "0.1.0",
-	"name": "LinkedIn",
+	"name": "Instagram",
 	"behavior": "create",
-	"noteContentFormat": "\n- [ ] TODO Copy title from frontmatter to note file name\n\n# Obsidian Notes\n\n- \n\n# Original article\n\n{{content}}",
+	"noteContentFormat": "\n# Obsidian Notes\n\n- \n\n# Original article\n\n{{content|replace:\"#\":\"tag:\"}}\n\n![Original Image]({{selector:img.x5yr21d?src |nth:2|replace:\"\\\"\":\"\"|replace:\"[\":\"\"|replace:\"]\":\"\"}})\n",
 	"properties": [
 		{
 			"name": "title",
-			"value": "{{\\\"Generate a title\\\"}}",
+			"value": "",
 			"type": "text"
 		},
 		{
@@ -16,12 +16,12 @@
 		},
 		{
 			"name": "description",
-			"value": "{{\\\"Make 4-5 lines description of the article. You are a professional in the field, and can explain things in detail\\\"}}",
+			"value": "",
 			"type": "text"
 		},
 		{
 			"name": "author",
-			"value": "{{selector:.update-components-actor__title > .hoverable-link-text > span[dir=\\\\\"ltr\\\\\"] > span[aria-hidden=\\\\\"true\\\\\"]}}",
+			"value": "{{author|split:\",\"|join}}",
 			"type": "multitext"
 		},
 		{
@@ -41,17 +41,17 @@
 		},
 		{
 			"name": "date_published",
-			"value": "{{published|date:\\\"YYYY-MM-DD\\\"}}",
+			"value": "{{published|date:\"YYYY-MM-DD\"}}",
 			"type": "datetime"
 		},
 		{
 			"name": "date_saved",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{
 			"name": "created",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{
@@ -76,18 +76,8 @@
 		},
 		{
 			"name": "read_length_minutes",
-			"value": "{{words|calc:\\\"/238\\\"}}",
+			"value": "{{words|calc:\"/238\"}}",
 			"type": "number"
-		},
-		{
-			"name": "publish",
-			"value": "true",
-			"type": "checkbox"
-		},
-		{
-			"name": "publish_mode",
-			"value": "external",
-			"type": "text"
 		},
 		{
 			"name": "personal_rating",
@@ -96,9 +86,9 @@
 		}
 	],
 	"triggers": [
-		"https://www.linkedin.com/"
+		"https://www.instagram.com/"
 	],
-	"noteNameFormat": "LinkedIn post - TODO",
+	"noteNameFormat": "Instagram post - {{meta:name:twitter:title}}",
 	"path": "media/websites",
-	"context": "{{content}}"
+	"context": "{{title}}"
 }

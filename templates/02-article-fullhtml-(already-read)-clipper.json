@@ -2,7 +2,7 @@
 	"schemaVersion": "0.1.0",
 	"name": "Article fullHtml (ALREADY READ)",
 	"behavior": "create",
-	"noteContentFormat": "- [ ] TODO: add tags and remove this line!!\n\n# Obsidian Notes\n\n- \n\n# Highlights\n\n- {{highlights|map: item => item.text|join:\\\"\\\\n- \\\"}}\n\n---\n\n# {{title}}\n\n{{fullHtml|markdown}}",
+	"noteContentFormat": "- [ ] TODO: add tags and remove this line!!\n\n# Obsidian Notes\n\n- \n\n# Highlights\n\n- {{highlights|map: item => item.text|join:\"\\n- \"}}\n\n---\n\n# {{title}}\n\n{{fullHtml|markdown}}",
 	"properties": [
 		{
 			"name": "title",
@@ -16,12 +16,12 @@
 		},
 		{
 			"name": "description",
-			"value": "{{\\\"Make 4-5 lines description of the article. You are a professional in the field, and can explain things in detail\\\"}}",
+			"value": "{{\"Make 4-5 lines description of the article. You are a professional in the field, and can explain things in detail\"}}",
 			"type": "text"
 		},
 		{
 			"name": "author",
-			"value": "{{author|split:\\\",\\\"|join}}",
+			"value": "{{author|split:\",\"|join}}",
 			"type": "multitext"
 		},
 		{
@@ -41,22 +41,22 @@
 		},
 		{
 			"name": "date_published",
-			"value": "{{published|date:\\\"YYYY-MM-DD\\\"}}",
+			"value": "{{published|date:\"YYYY-MM-DD\"}}",
 			"type": "datetime"
 		},
 		{
 			"name": "date_saved",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{
 			"name": "date_read",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{
 			"name": "created",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{
@@ -81,7 +81,7 @@
 		},
 		{
 			"name": "read_length_minutes",
-			"value": "{{words|calc:\\\"/238\\\"}}",
+			"value": "{{words|calc:\"/238\"}}",
 			"type": "number"
 		},
 		{
@@ -98,10 +98,15 @@
 			"name": "personal_rating",
 			"value": "",
 			"type": "number"
+		},
+		{
+			"name": "status",
+			"value": "done",
+			"type": "text"
 		}
 	],
 	"triggers": [],
-	"noteNameFormat": "{{title}} - {{author|split:\\\", \\\"|join}}",
+	"noteNameFormat": "{{title}} - {{author|split:\", \"|join}}",
 	"path": "media/articles",
 	"context": "{{content}}"
 }

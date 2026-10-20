@@ -19,7 +19,8 @@ These templates are designed for real-world knowledge workflows: articles, GitHu
 - [Website Default](templates/04-website-default-clipper.json)
 - [Website contentHtml](templates/05-website-contenthtml-clipper.json)
 - [Website fullHtml](templates/06-website-fullhtml-clipper.json)
-- [Wikipedia](templates/28-wikipedia-clipper.json)
+- [Wikipedia](templates/31-wikipedia-clipper.json)
+- [Wikipedia (person)](templates/32-wikipedia-(person)-clipper.json)
 
 ### Tasks
 
@@ -29,41 +30,44 @@ These templates are designed for real-world knowledge workflows: articles, GitHu
 ### Social and Community
 
 - [Reddit Post](templates/09-reddit-post-clipper.json)
-- [The Hacker News](templates/26-the-hacker-news-clipper.json)
-- [Instagram](templates/29-instagram-clipper.json)
-- [LinkedIn](templates/30-linkedin-clipper.json)
+- [X (Twitter) Post](templates/10-x-(twitter)-post-clipper.json)
+- [The Hacker News](templates/29-the-hacker-news-clipper.json)
+- [Instagram](templates/33-instagram-clipper.json)
+- [LinkedIn](templates/34-linkedin-clipper.json)
 
 ### Shopping and Places
 
-- [Product](templates/10-product-clipper.json)
-- [Recipes](templates/25-recipes-clipper.json)
-- [Google Maps](templates/27-google-maps-clipper.json)
+- [Product](templates/11-product-clipper.json)
+- [Food product](templates/28-food-product-clipper.json)
+- [Recipes](templates/27-recipes-clipper.json)
+- [Google Maps](templates/30-google-maps-clipper.json)
 
 ### Video and Learning
 
-- [YouTube with transcript](templates/11-youtube-with-transcript-clipper.json)
-- [YouTube](templates/12-youtube-clipper.json)
-- [YouTube timestamp](templates/13-youtube-timestamp-clipper.json)
-- [Jupyter Notebook](templates/24-jupyter-notebook-clipper.json)
+- [YouTube with transcript](templates/12-youtube-with-transcript-clipper.json)
+- [YouTube](templates/13-youtube-clipper.json)
+- [YouTube timestamp](templates/14-youtube-timestamp-clipper.json)
+- [Jupyter Notebook](templates/26-jupyter-notebook-clipper.json)
 
 ### AI and LLM Platforms
 
-- [Google NotebookLM](templates/14-google-notebooklm-clipper.json)
-- [Google Gemini](templates/15-google-gemini-clipper.json)
-- [Grok](templates/16-grok-clipper.json)
-- [ChatGPT](templates/17-chatgpt-clipper.json)
+- [Google NotebookLM](templates/15-google-notebooklm-clipper.json)
+- [Google Gemini](templates/16-google-gemini-clipper.json)
+- [Grok](templates/17-grok-clipper.json)
+- [ChatGPT](templates/18-chatgpt-clipper.json)
+- [Claude](templates/19-claude-clipper.json)
 
 ### Email and Communication
 
-- [Google Mail](templates/18-google-mail-clipper.json)
-- [Outlook Mail](templates/19-outlook-mail-clipper.json)
+- [Google Mail](templates/20-google-mail-clipper.json)
+- [Outlook Mail](templates/21-outlook-mail-clipper.json)
 
 ### GitHub
 
-- [GitHub Issue](templates/20-github-issue-clipper.json)
-- [GitHub Pull Request](templates/21-github-pull-request-clipper.json)
-- [Github Releases](templates/22-github-releases-clipper.json)
-- [GitHub Repository](templates/23-github-repository-clipper.json)
+- [GitHub Issue](templates/22-github-issue-clipper.json)
+- [GitHub Pull Request](templates/23-github-pull-request-clipper.json)
+- [Github Releases](templates/24-github-releases-clipper.json)
+- [GitHub Repository](templates/25-github-repository-clipper.json)
 
 ## Requirements
 
@@ -92,6 +96,8 @@ Most templates include these core fields:
 - path: Destination folder in your vault.
 
 Templates use placeholder expressions in double braces to extract data from the page and metadata.
+
+Filter arguments use plain double quotes (`{{time|date:"YYYY-MM-DD"}}`), not the escaped `\"` form that older Web Clipper exports contain. The plain form renders correctly both in the browser extension and in [Knap](https://knap.md/), the template engine that Web Clipper moved to in September 2026. The file numbers follow the template order in the extension, which matters when two templates share a trigger: the extension picks the first match, so "Wikipedia" must come before "Wikipedia (person)".
 
 ## Customization Tips
 

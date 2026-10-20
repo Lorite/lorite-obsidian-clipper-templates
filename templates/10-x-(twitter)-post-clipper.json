@@ -1,0 +1,83 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "X (Twitter) Post",
+	"behavior": "create",
+	"noteContentFormat": "- [ ] TODO: add tags and remove this line!!\n\n# Obsidian Notes\n\n- \n\n# Highlights\n\n- {{highlights|map: item => item.text|join:\"\\n- \"}}\n\n---\n\n# Original post\n\n> Posted on **X** by *{{title|split:\" on X\"|first|replace:\"/ [(]@.*$/\":\"\"|trim}}* ([@{{selector:link[rel='canonical']?href|split:\"/\"|slice:3,4|first}}](https://x.com/{{selector:link[rel='canonical']?href|split:\"/\"|slice:3,4|first}})) on {{published|date:\"YYYY-MM-DD\"}}\n\n{% set mainid = url|split:\"/status/\"|last|split:\"?\"|first|split:\"/\"|first %}{% for post in selectorHtml:article %}{% if loop.first %}{{post|remove_html:\"button,svg,video,.aspect-video,.x-avatar,.x-engagement-pill,a[aria-label='Reply'],a[href*='/compose/'],.text-gray-700 > a,.border-border,[role='group'],[data-testid='Tweet-User-Avatar'],[data-testid='caret'],a[href$='/analytics']\"|markdown|replace:\"/\\\\[\\\\s+([^\\\\n\\\\]]+?)\\\\s+\\\\]\\\\(/g\":\"[$1](\",\"](/\":\"](https://x.com/\"|replace:\"/\\\\[\\\\s*!\\\\[[^\\\\]]*\\\\]\\\\([^)]*\\\\/profile_images\\\\/[^)]*\\\\)\\\\s*\\\\]\\\\([^)]*\\\\)/g\":\"\",\"/!\\\\[[^\\\\]]*\\\\]\\\\([^)]*\\\\/profile_images\\\\/[^)]*\\\\)/g\":\"\",\"/!\\\\[([^\\\\]]*)\\\\]\\\\([^)]*\\\\/emoji\\\\/[^)]*\\\\)/g\":\"$1\",\"/\\\\[[^\\\\]]*\\\\]\\\\([^)]*\\\\/(analytics|quotes)\\\\)/g\":\"\",\"/Click to Subscribe to \\\\S+/g\":\"\",\"/\\\\n(GIF|·|\\\\d+:\\\\d+ \\\\/ \\\\d+:\\\\d+)(?=\\\\n)/g\":\"\"|trim}}\n\n{% if post contains \"<video\" %}![Video thumbnail]({{selector:article[tabindex='-1'] video?poster|first}}{{image|replace:\"/^https:\\\\/\\\\/abs\\\\.twimg\\\\.com\\\\/rweb\\\\/ssr\\\\/default.*$/\":\"\"}})\n\n> [!tip]- Video\n> Watch it on the [original post]({{url}}). Download a local copy with `yt-dlp \"{{url}}\"`.\n\n{% endif %}{% endif %}{% endfor %}# Replies\n\n{% for post in selectorHtml:article:not([data-testid='cellInnerDiv']:has(h2) ~ * article) %}{% if loop.first %}{% elseif post contains mainid %}{% else %}### Reply\n\n{{post|remove_html:\"button,svg,video,.aspect-video,.x-avatar,.x-engagement-pill,a[aria-label='Reply'],a[href*='/compose/'],.text-gray-700 > a,.border-border,[role='group'],[data-testid='Tweet-User-Avatar'],[data-testid='caret'],a[href$='/analytics']\"|markdown|replace:\"/\\\\[\\\\s+([^\\\\n\\\\]]+?)\\\\s+\\\\]\\\\(/g\":\"[$1](\",\"](/\":\"](https://x.com/\"|replace:\"/\\\\[\\\\s*!\\\\[[^\\\\]]*\\\\]\\\\([^)]*\\\\/profile_images\\\\/[^)]*\\\\)\\\\s*\\\\]\\\\([^)]*\\\\)/g\":\"\",\"/!\\\\[[^\\\\]]*\\\\]\\\\([^)]*\\\\/profile_images\\\\/[^)]*\\\\)/g\":\"\",\"/!\\\\[([^\\\\]]*)\\\\]\\\\([^)]*\\\\/emoji\\\\/[^)]*\\\\)/g\":\"$1\",\"/\\\\[[^\\\\]]*\\\\]\\\\([^)]*\\\\/(analytics|quotes)\\\\)/g\":\"\",\"/Click to Subscribe to \\\\S+/g\":\"\",\"/\\\\n(GIF|·|\\\\d+:\\\\d+ \\\\/ \\\\d+:\\\\d+)(?=\\\\n)/g\":\"\"|trim}}\n\n{% endif %}{% endfor %}",
+	"properties": [
+		{
+			"name": "created",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "reviewed",
+			"value": "",
+			"type": "datetime"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "media, websites, x_twitter",
+			"type": "multitext"
+		},
+		{
+			"name": "title",
+			"value": "{{title|split:\" on X\"|first|replace:\"/ [(]@.*$/\":\"\"|trim}} on X: {{description|slice:0,80}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{title|split:\" on X\"|first|replace:\"/ [(]@.*$/\":\"\"|trim}}",
+			"type": "multitext"
+		},
+		{
+			"name": "handle",
+			"value": "@{{selector:link[rel='canonical']?href|split:\"/\"|slice:3,4|first}}",
+			"type": "text"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "image",
+			"value": "{{selector:article[tabindex='-1'] video?poster|first}}{{image|replace:\"/^https:\\\\/\\\\/abs\\\\.twimg\\\\.com\\\\/rweb\\\\/ssr\\\\/default.*$/\":\"\"}}",
+			"type": "text"
+		},
+		{
+			"name": "published",
+			"value": "{{published|date:\"YYYY-MM-DD\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "type",
+			"value": "website",
+			"type": "text"
+		},
+		{
+			"name": "publish",
+			"value": "true",
+			"type": "checkbox"
+		},
+		{
+			"name": "publish_mode",
+			"value": "external",
+			"type": "text"
+		},
+		{
+			"name": "personal_rating",
+			"value": "",
+			"type": "number"
+		}
+	],
+	"triggers": [
+		"/^https?:\\/\\/(www\\.|mobile\\.)?(x|twitter)\\.com\\/[^\\/]+\\/status\\/\\d+/"
+	],
+	"noteNameFormat": "{{published|date:\"YYYY-MM-DD\"}} X {{title|split:\" on X\"|first|replace:\"/ [(]@.*$/\":\"\"|trim|safe_name}} - {{description|slice:0,60|safe_name}}",
+	"path": "media/websites"
+}

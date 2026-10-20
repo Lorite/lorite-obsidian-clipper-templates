@@ -6,7 +6,7 @@
 	"properties": [
 		{
 			"name": "created",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{
@@ -26,12 +26,12 @@
 		},
 		{
 			"name": "author",
-			"value": "{{selector:.post-body > div[itemprop=\\\"author\\\"] > meta[itemprop=\\\"name\\\"]?content|split:\\\",\\\"|join}}",
+			"value": "{{selector:.post-body > div[itemprop=\"author\"] > meta[itemprop=\"name\"]?content|split:\",\"|join}}",
 			"type": "multitext"
 		},
 		{
 			"name": "published",
-			"value": "{{selectorHtml:.post-body > meta[itemprop=\\\"datePublished\\\"]?content|date:\\\"YYYY-MM-DDTHH:mm:ssZ\\\"}}",
+			"value": "{{selectorHtml:.post-body > meta[itemprop=\"datePublished\"]?content|date:\"YYYY-MM-DDTHH:mm:ssZ\"}}",
 			"type": "datetime"
 		},
 		{

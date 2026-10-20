@@ -1,0 +1,83 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Wikipedia (person)",
+	"behavior": "create",
+	"noteContentFormat": "- [ ] TODO: create a concept under a concepts/ folder where needed and link it under [[#Obsidian Notes]]\n\n# Obsidian Notes\n\n- TODO\n\n---\n\n# AI Generated\n\n## Flashcards\n\n{{\"You are an expert educator creating spaced repetition flashcards. Given the note below, generate flashcards that cover its key facts, definitions, mechanisms, and applications. Flashcard format (obsidian-spaced-repetition plugin, folder-deck mode — no #flashcard tags). I used backticks to help you only, but don't add backticks unless part of the question/answer:\n- Single-line basic: `Question::Answer`\n- Single-line bidirectional: `Question:::Answer`\n- Multi-line basic:\n```\nQuestion\n?\nAnswer\n```\n- Multi-line bidirectional:\n```\nQuestion\n??\nAnswer\n```\n- Cloze: `Text with ==term== and ==another term==`\n- Cloze with hint: `Text with ==term;;hint==`\n- Cloze numbered: `==2;;second revealed== and ==1;;first revealed==`\nSeparate each card with a blank line. Mix card types. Generate 5-8 cards covering definition, mechanism, use cases, and key facts. Return ONLY the flashcard markdown — no explanation, no section headers, no wrapper text.\" | replace:(\"/^ *::: *$/gm\":\"??\",\"/^ *:: *$/gm\":\"?\",\"\\\\\\\\\\\"\":\"\\\"\")}}\n\n---\n\n# Original Article\n\n{{content}}\n",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "short_description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "description",
+			"value": "{{\"Make 4-5 lines description of the article. You are a professional in the field, and can explain things in detail\"}}",
+			"type": "text"
+		},
+		{
+			"name": "image",
+			"value": "{{image}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "[[Wikipedia]]",
+			"type": "multitext"
+		},
+		{
+			"name": "tags",
+			"value": "media, people",
+			"type": "multitext"
+		},
+		{
+			"name": "created",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "word_count",
+			"value": "{{words}}",
+			"type": "number"
+		},
+		{
+			"name": "type",
+			"value": "person",
+			"type": "text"
+		},
+		{
+			"name": "read_length_minutes",
+			"value": "{{words|calc:\"/238\"}}",
+			"type": "number"
+		},
+		{
+			"name": "publish",
+			"value": "true",
+			"type": "checkbox"
+		},
+		{
+			"name": "publish_mode",
+			"value": "external",
+			"type": "text"
+		},
+		{
+			"name": "personal_rating",
+			"value": "",
+			"type": "number"
+		}
+	],
+	"triggers": [
+		"/^https:\\/\\/[a-z]{2,3}\\.wikipedia\\.org\\/wiki\\/.*$/"
+	],
+	"noteNameFormat": "{{title}}",
+	"path": "media/people"
+}

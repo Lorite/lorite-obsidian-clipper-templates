@@ -2,11 +2,11 @@
 	"schemaVersion": "0.1.0",
 	"name": "Reddit Post",
 	"behavior": "create",
-	"noteContentFormat": "- [ ] TODO: add tags and remove this line!!\n\n# Obsidian Notes\n\n- \n\n# Highlights\n\n- {{highlights|map: item => item.text|join:\\\"\\\\n- \\\"}}\n\n---\n\n# Original Post\n\n> Posted in **{{selector:shreddit-post?subreddit-prefixed-name}}** by *{{selector:shreddit-post?author}}* at {{selector:shreddit-post?created-timestamp|date:\"YYYY-MM-DDTHH:mm:ssZ\"}} (⬆️ {{selector:shreddit-post?score}})\n\n\n## {{selector:shreddit-post?post-title|trim}}\n\n{{content}}\n",
+	"noteContentFormat": "- [ ] TODO: add tags and remove this line!!\n\n# Obsidian Notes\n\n- \n\n# Highlights\n\n- {{highlights|map: item => item.text|join:\"\\n- \"}}\n\n---\n\n# Original Post\n\n> Posted in **{{selector:shreddit-post?subreddit-prefixed-name}}** by *{{selector:shreddit-post?author}}* at {{selector:shreddit-post?created-timestamp|date:\"YYYY-MM-DDTHH:mm:ssZ\"}} (⬆️ {{selector:shreddit-post?score}})\n\n\n## {{selector:shreddit-post?post-title|trim}}\n\n{{content}}\n",
 	"properties": [
 		{
 			"name": "created",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{
@@ -31,7 +31,7 @@
 		},
 		{
 			"name": "published",
-			"value": "{{selector:shreddit-post?created-timestamp|date:\\\"YYYY-MM-DDTHH:mm:ssZ\\\"}}",
+			"value": "{{selector:shreddit-post?created-timestamp|date:\"YYYY-MM-DDTHH:mm:ssZ\"}}",
 			"type": "datetime"
 		},
 		{
