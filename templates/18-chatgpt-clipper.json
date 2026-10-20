@@ -1,22 +1,22 @@
 {
 	"schemaVersion": "0.1.0",
-	"name": "Google Gemini",
+	"name": "ChatGPT",
 	"behavior": "create",
-	"noteContentFormat": "- [ ] TODO: modify the body to split the questions and answers, add tags and remove this line!!\n\n{{content}}\n",
+	"noteContentFormat": "- [ ] TODO: modify the body to split the questions and answers, add tags and remove this line!!\n\n# Obsidian Notes\n\n- \n\n# AI Chat\n\n{{selectorHtml:div.\\@container\\/main > div | markdown}}\n\n",
 	"properties": [
 		{
 			"name": "title",
-			"value": "{{selector:.conversation.selected .conversation-title}}",
+			"value": "{{title}}",
 			"type": "text"
 		},
 		{
 			"name": "description",
-			"value": "{{\\\"Make 4-5 lines description of the article. You are a professional in the field, and can explain things in detail\\\"}}",
+			"value": "{{\"Make 4-5 lines description of the article. You are a professional in the field, and can explain things in detail\"}}",
 			"type": "text"
 		},
 		{
 			"name": "author",
-			"value": "[[Google Gemini]]",
+			"value": "[[ChatGPT]]",
 			"type": "multitext"
 		},
 		{
@@ -26,12 +26,12 @@
 		},
 		{
 			"name": "date_saved",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{
 			"name": "created",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{
@@ -51,7 +51,7 @@
 		},
 		{
 			"name": "read_length_minutes",
-			"value": "{{words|calc:\\\"/238\\\"}}",
+			"value": "{{words|calc:\"/238\"}}",
 			"type": "number"
 		},
 		{
@@ -61,14 +61,14 @@
 		},
 		{
 			"name": "ai_model",
-			"value": "Google Gemini {{selector:.logo-pill-label-container span}}",
+			"value": "ChatGPT",
 			"type": "text"
 		}
 	],
 	"triggers": [
-		"https://gemini.google.com/"
+		"https://chatgpt.com/"
 	],
-	"noteNameFormat": "AI Chat - Google Gemini - {{selector:.conversation.selected .conversation-title}}",
-	"path": "ai_chats/",
+	"noteNameFormat": "AI Chat - ChatGPT - {{title}}",
+	"path": "ai_chats/chats/",
 	"context": "{{content}}"
 }

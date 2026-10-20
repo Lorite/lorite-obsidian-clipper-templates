@@ -1,0 +1,134 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Recipes",
+	"behavior": "create",
+	"noteContentFormat": "\n# Cooking Log\n\n## Date\n\n# Description\n\n{{description}}\n\n# Ingredients\n\n{{schema:recipeIngredient|list:task}}\n\n# Instructions\n\n{{schema:recipeInstructions[*].text|list:numbered-task}}\n\n# Nutrition\n\n{{schema:@Recipe:nutrition|uncamel|capitalize|table|replace:(\"@type\":\"Nutrient\",\"Nutrition information\":\"Quantity\")}}\n\n# Obsidian Notes\n\n{{selectorHtml:div[class=\"wprm-recipe-notes\"] | markdown}}\n\n# Comments\n\n{{schema:review|map:item => ({author: item.author.name, reviewRating: item.reviewRating.ratingValue, reviewBody: item.reviewBody})|template:\"- ${author}: ${reviewRating}/5. ${reviewBody}\"}}\n\n---\n\n# AI Generated\n\n## Flashcards\n\n{{\"You are an expert educator creating spaced repetition flashcards. Given the note below, generate flashcards that cover its key facts, definitions, mechanisms, and applications. Flashcard format (obsidian-spaced-repetition plugin, folder-deck mode — no #flashcard tags):\n- Single-line basic:          Question :: Answer\n- Single-line bidirectional:  Question ::: Answer\n- Multi-line basic:           Question\n                              ?\n                              Answer\n- Multi-line bidirectional:   Question\n                              ??\n                              Answer\n- Cloze:                      Text with ==term== and ==another term==\n- Cloze with hint:            Text with ==term;;hint==\n- Cloze numbered:             ==2;;second revealed== and ==1;;first revealed==\nSeparate each card with a blank line. Mix card types. Generate 5-8 cards covering definition, mechanism, use cases, and key facts. Return ONLY the flashcard markdown — no explanation, no section headers, no wrapper text.\" | replace:\"\\\\\\\\\\\"\":\"\\\"\"}}\n",
+	"properties": [
+		{
+			"name": "author",
+			"value": "{{schema:author[*].name|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "image",
+			"value": "{{image}}",
+			"type": "text"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "online_rating",
+			"value": "{{schema:aggregateRating.ratingValue|calc:\"*2\"}}",
+			"type": "number"
+		},
+		{
+			"name": "personal_rating",
+			"value": "",
+			"type": "number"
+		},
+		{
+			"name": "cooking_method",
+			"value": "{{schema:cookingMethod}}",
+			"type": "text"
+		},
+		{
+			"name": "recipe_category",
+			"value": "{{schema:recipeCategory}}",
+			"type": "text"
+		},
+		{
+			"name": "recipe_cuisine",
+			"value": "{{schema:recipeCuisine}}",
+			"type": "text"
+		},
+		{
+			"name": "total_time",
+			"value": "{{schema:totalTime}}",
+			"type": "number"
+		},
+		{
+			"name": "prep_time",
+			"value": "{{schema:prepTime}}",
+			"type": "number"
+		},
+		{
+			"name": "cook_time",
+			"value": "{{schema:cookTime}}",
+			"type": "number"
+		},
+		{
+			"name": "perform_time",
+			"value": "{{schema:performTime}}",
+			"type": "number"
+		},
+		{
+			"name": "suitable_for_diet",
+			"value": "{{schema:suitableForDiet}}",
+			"type": "text"
+		},
+		{
+			"name": "recipe_yield",
+			"value": "{{schema:recipeYield}}",
+			"type": "text"
+		},
+		{
+			"name": "estimated_cost",
+			"value": "{{schema:estimatedCost}}",
+			"type": "text"
+		},
+		{
+			"name": "created",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "publisher",
+			"value": "{{schema:publisher.name|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "tags",
+			"value": "media, food, cooking_recipes, {{schema:keywords|snake|join:\", \"}}",
+			"type": "multitext"
+		},
+		{
+			"name": "type",
+			"value": "recipe",
+			"type": "text"
+		},
+		{
+			"name": "publish",
+			"value": "true",
+			"type": "checkbox"
+		},
+		{
+			"name": "publish_mode",
+			"value": "external",
+			"type": "text"
+		},
+		{
+			"name": "status",
+			"value": "",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"schema:@Recipe"
+	],
+	"noteNameFormat": "{{title}}",
+	"path": "media/food/cooking_recipes",
+	"context": "# Description\n\n{{description}}\n\n# Ingredients\n\n{{schema:recipeIngredient|list:task}}\n\n# Instructions\n\n{{schema:recipeInstructions[*].text|list:numbered-task}}\n\n# Nutrition\n\n{{schema:@Recipe:nutrition|uncamel|capitalize|table|replace:(\"@type\":\"Nutrient\",\"Nutrition information\":\"Quantity\")}}"
+}

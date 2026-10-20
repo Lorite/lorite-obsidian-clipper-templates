@@ -6,7 +6,7 @@
 	"properties": [
 		{
 			"name": "created",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{
@@ -21,7 +21,7 @@
 		},
 		{
 			"name": "received",
-			"value": "{{selector:span[class=\\\"g3\\\"]?title|last|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{selector:span[class=\"g3\"]?title|last|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{

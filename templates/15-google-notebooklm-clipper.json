@@ -11,7 +11,7 @@
 		},
 		{
 			"name": "description",
-			"value": "{{\\\"Make 4-5 lines description of the article. You are a professional in the field, and can explain things in detail\\\"}}",
+			"value": "{{\"Make 4-5 lines description of the article. You are a professional in the field, and can explain things in detail\"}}",
 			"type": "text"
 		},
 		{
@@ -26,12 +26,12 @@
 		},
 		{
 			"name": "date_saved",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{
 			"name": "created",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{
@@ -51,7 +51,7 @@
 		},
 		{
 			"name": "read_length_minutes",
-			"value": "{{words|calc:\\\"/238\\\"}}",
+			"value": "{{words|calc:\"/238\"}}",
 			"type": "number"
 		},
 		{
@@ -69,6 +69,6 @@
 		"https://notebooklm.google.com/"
 	],
 	"noteNameFormat": "AI Chat - Google NotebookLM - {{selector:editable-project-title}}",
-	"path": "ai_chats/",
+	"path": "ai_chats/chats/",
 	"context": "{{content}}"
 }

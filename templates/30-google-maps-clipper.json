@@ -21,17 +21,17 @@
 		},
 		{
 			"name": "location",
-			"value": "{{url|split:\\\"/@\\\"|slice:1|split:\\\",\\\"|slice:0,2}}",
+			"value": "{{url|split:\"/@\"|slice:1|split:\",\"|slice:0,2}}",
 			"type": "multitext"
 		},
 		{
 			"name": "address",
-			"value": "{{selector:button[aria-label^=\\\"Address:\\\"]:aria-label|split:\\\"Address: \\\"|slice:1}}",
+			"value": "{{selector:button[aria-label^=\"Address:\"]:aria-label|split:\"Address: \"|slice:1}}",
 			"type": "text"
 		},
 		{
 			"name": "url",
-			"value": "{{selector:div[aria-label^=\\\"Information for\\\"] a[href*=\\\"http\\\"]:href|slice:0,1}}",
+			"value": "{{selector:div[aria-label^=\"Information for\"] a[href*=\"http\"]:href|slice:0,1}}",
 			"type": "text"
 		},
 		{
@@ -41,17 +41,17 @@
 		},
 		{
 			"name": "scoreGoogle",
-			"value": "{{selector:div[jsaction*=\\\"moreReviews\\\"] .fontDisplayLarge}}",
+			"value": "{{selector:div[jsaction*=\"moreReviews\"] .fontDisplayLarge}}",
 			"type": "number"
 		},
 		{
 			"name": "description",
-			"value": "{{selector:div[aria-label^=\\\"About \\\"] button .PYvSYb[jslog]}}",
+			"value": "{{selector:div[aria-label^=\"About \"] button .PYvSYb[jslog]}}",
 			"type": "text"
 		},
 		{
 			"name": "created",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "date"
 		},
 		{

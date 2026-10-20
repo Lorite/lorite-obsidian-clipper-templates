@@ -1,0 +1,33 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Food product",
+	"behavior": "create",
+	"noteContentFormat": "\n# Obsidian Notes\n\n# Original Product Information\n\n{{content}}",
+	"properties": [
+		{
+			"name": "image",
+			"value": "{{image}}",
+			"type": "text"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "media, food, products",
+			"type": "multitext"
+		},
+		{
+			"name": "personal_rating",
+			"value": "",
+			"type": "number"
+		}
+	],
+	"triggers": [
+		"https://world.openfoodfacts.org/"
+	],
+	"noteNameFormat": "{{title}}",
+	"path": "media/food/products"
+}

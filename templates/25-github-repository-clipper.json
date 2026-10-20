@@ -36,12 +36,12 @@
 		},
 		{
 			"name": "tags",
-			"value": "media, github, github_repository, {{selector:.topic-tag|join:\\\", \\\"}}",
+			"value": "media, github, github_repository, {{selector:.topic-tag|join:\", \"}}",
 			"type": "multitext"
 		},
 		{
 			"name": "created",
-			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
+			"value": "{{time|date:\"YYYY-MM-DDTHH:mm\"}}",
 			"type": "datetime"
 		},
 		{
